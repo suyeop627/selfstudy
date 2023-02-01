@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <!-- react dom으로 추가할 위치를 지정하기 위한 div -->
+    <div id="root"></div>
+  </body>
+  <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script>
+  <script type="text/babel">
+    //function Btn(props) {
+    function Btn({ text, fontSize = 30 }) {
+      //fontSize가 undefined일 경우, 기본값 설정
+      return (
+        <button
+          style={{
+            backgroundColor: "tomato",
+            color: "white",
+            padding: "10px 20px",
+            border: 0,
+            borderRadius: 10,
+            fontSize,
+            //fontSize: fontSize, 전달받은 props의 이름과 같을경우, 생략가능
+          }}
+        >
+          {text}
+        </button>
+      );
+    }
+    //PropTypes 적용image.png
+    Btn.propTypes = {
+      text: PropTypes.string.isRequired,
+      fontSize: PropTypes.number,
+    };
+    const App = () => {
+      return (
+        <div>
+          <Btn text="Save Change" fontSize={18} />
+          {/*문법적 오류는 없지만, props에 잘못된 값을 전달.*/}
+          <Btn text={"Continue"} />
+        </div>
+      );
+    };
+    const root = document.getElementById("root");
+    ReactDOM.render(<App />, root);
+  </script>
+</html>

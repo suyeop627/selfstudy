@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <!-- react dom으로 추가할 위치를 지정하기 위한 div -->
+    <div id="root"></div>
+  </body>
+  <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    //분 시간 변환기
+    const MinutesToHours = () => {
+      const [amount, setAmount] = React.useState(0); //default 0으로 지정
+      const [inverted, setInverted] = React.useState(false);
+      const onChange = (event) => {
+        setAmount(event.target.value);
+      };
+      const reset = () => setAmount(0);
+      //inverted가 false면 true로, true면 false로 update
+      // const onFlip=()=>setInverted(!inverted);
+      const onInvert = () => {
+        reset(); //input의 disabled 상태가 변환될 때, state 초기화
+        setInverted((current) => !current); //기존 state를 사용하여 변경할땐 함수로 변경
+      };
+      return (
+        <div>
+          <div>
+            <label htmlFor="minutes">Minutes</label>
+            <input
+              value={inverted ? amount * 60 : amount}
+              id="minutes"
+              placeholder="Minutes"
+              type="number"
+              onChange={onChange}
+              disabled={inverted === true}
+            />
+          </div>
+          <div>
+            <label htmlFor="hours">Hours</label>
+            <input
+              value={inverted ? amount : amount / 60}
+              /*입력받은 분이 저장된 state와 연결, 시간으로 변환*/ id="hours"
+              placeholder="Hours"
+              type="number"
+              onChange={onChange}
+              disabled={inverted === false} //disabled에 ture 또는 false값을 주어 활성화 상태를 변경
+            />
+          </div>
+          <button onClick={reset}>Reset</button>
+          {/* invert의 상태에 따라서 버튼의 내용이 바뀌도록 변경*/}
+          <button onClick={onInvert}>{inverted ? "Turn back" : "Invert"}</button>{" "}
+          {/*입력창 바꾸기*/}
+        </div>
+      );
+    };
+    function KmToMiles() {
+      return <h3>KM 2 M</h3>;
+    }
+    //root div를 그려주는 역할(내부에 다른 컴포넌트들을 랜더링)
+    const App = () => {
+      const [index, setIndex] = React.useState("xx");
+      //사용자가 선택한 옵션의 value가져오기(선택한 것을 알 수 있다.)
+      const onSelect = (event) => {
+        setIndex(event.target.value);
+      };
+      return (
+        <div>
+          <h1>Super Converter</h1>
+          <select value={index} onChange={onSelect}>
+            <option value="xx">Select your units</option>
+            <option value="0">Minutes & ToHours</option>
+            <option value="1">KM & Miles</option>
+          </select>
+          <hr />
+
+          {/*js문법을 사용하려면 {}안에 작성.*/}
+          {/*index가 0이라면, 분시간 변환기를 랜더링 index의 초기값이 0이므로, 시작하자마자 출력됨*/}
+          {index === "xx" ? "Select your units" : null}
+          {index === "0" ? <MinutesToHours /> : null}
+          {index === "1" ? <KmToMiles /> : null}
+        </div>
+      );
+    };
+    const root = document.getElementById("root");
+    ReactDOM.render(<App />, root);
+  </script>
+</html>

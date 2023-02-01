@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="KimSuyeop">
+  <meta name="date" content="2022.09.03">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Momentum</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <div id="greetingBox">
+      <h1 id="greeting" class="hidden"></h1>
+    </div>
+    <div id="weather">
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+  <section>
+    <div id="login_wrap">
+      <form id="login-form" class="hidden">
+        <input required maxlength="15" type="text" placeholder="What is your name?">
+        <input type="submit" value=" Log In ">
+      </form>
+    </div>
+    <div id="beforeLogin" class="hidden">
+      <div id="clock_wrap">
+        <h2 id="clock">00:00:00</h2>
+      </div>
+      <div id = "search">
+        <form action="http://www.google.com/search"  target="_blank">
+          <input type=text name = q placeholder="Google 검색">
+          <input type=submit value="Search" >
+        </form>
+      </div>
+      <div id="todo">
+        <h1 id="timeLeft"></h1>
+        <form id="todo-form">
+          <input type="text" placeholder="What I Have To Do Today" required />
+        </form>
+        <span id="highlight">Click todo to highlight</span>
+        <ul id="todo-list"></ul>
+      </div>
+  </section>
+  <footer>
+    <div id="quote">
+      <span></span>
+      <br>
+      <span></span>
+    </div>
+  </footer>
+  </div>
+
+
+
+
+</body>
+<script src="js/greetings.js"></script>
+<script src="js/clock.js"></script>
+<script src="js/quotes.js"></script>
+<script src="js/background.js"></script>
+<script src="js/todo.js"></script>
+<script src="js/api_key.js"></script>
+<script src="js/weather.js">
+  console.log(311.14 / .3533)
+
+</script>
+
+
+</html>

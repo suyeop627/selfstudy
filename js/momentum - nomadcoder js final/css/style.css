@@ -1,0 +1,289 @@
+*{
+  margin : 0;
+  padding : 0;
+  text-align: center;
+  font-family: 'Dongle', sans-serif;
+
+}
+li {
+  list-style: none;
+  vertical-align: baseline;
+}
+
+img{
+  width : 100%;
+  height : 100%;
+  position : absolute;
+  top : 0;
+  left : 0;
+  z-index: -1;
+}
+
+header {
+  width : 1400px;
+  height : 150px;
+margin: 0 auto;
+
+}
+
+section {
+  width : 1400px;
+  height : 600px;
+  margin: 0 auto;
+  position : relative;
+
+}
+footer{
+  width : 1400px;
+
+
+  margin: 0 auto;
+}
+
+.hidden {
+  display: none;
+
+
+}
+.highlight {
+  text-shadow: 
+  0 0 5px rgb(230, 255, 86),
+  0 0 10px rgb(230, 255, 86),
+  0 0 20px rgb(230, 255, 86) !important;
+
+}  
+
+
+#login_wrap{
+  position : absolute;
+  top : 50%;
+  left: 50%;
+  
+
+}
+
+#login-form input:first-child{
+  border : none;
+  color : white;
+  background-color: #ffffff00;
+  font-size: 70px;
+  text-shadow: 
+  0 0 5px rgb(255, 255, 255),
+  0 0 10px rgb(255, 255, 255),
+  0 0 20px rgb(255, 255, 255) ;
+  border-bottom: 2px solid ;
+  position : relative;
+}
+#login-form input:first-child::placeholder{
+  color : rgba(255, 255, 255, 0.5);
+  text-shadow: 
+  0 0 5px rgb(104, 250, 255, 0.7),
+  0 0 10px rgb(104, 250, 255, 0.7),
+  0 0 30px rgb(104, 250, 255, 0.7) ;
+}
+#login-form input:first-child:focus{
+outline: none;
+}
+
+
+
+#login-form input:last-child{
+background-color: #ffffff00;
+border : none;
+line-height: 10px;
+color: #fff;
+border-left: 3px solid ;
+border-bottom: 1px solid;
+width : 100px;
+height : 40px;
+font-size: 40px;;
+border-radius: 15px;
+
+text-shadow: 
+0 0 5px rgb(104, 250, 255, 0.7),
+0 0 10px rgb(104, 250, 255, 0.7);
+
+position : absolute;
+bottom: 5px;
+}
+
+
+#greeting{
+  float : right;
+  color : white ;
+  font-size: 100px;
+  text-shadow: 
+  0 0 5px rgb(198, 220, 255),
+  0 0 10px rgb(198, 220, 255);
+ margin-top: 30px;
+
+}
+
+#weather {
+  color: white;
+  float : left;
+  font-size: 60px;
+  position : absolute;
+  top : 50px;
+}
+
+#weather span:first-child{
+
+  font-weight: bold;
+  text-shadow: 
+  0 0 7px #fff, 
+  0 0 20px #fff,
+  0 0 30px #fff;
+}
+
+#weather span:last-child{
+  font-size: 40px;
+  text-shadow: 
+  0 0 5px #fff,
+  0 0 10px #fff;
+}
+
+
+
+#clock_wrap {
+    font-size: 230px;
+    color: rgb(255, 255, 255);
+    text-shadow:
+        0 0 5px rgb(127, 163, 255),
+        0 0 10px rgb(127, 163, 255),
+        0 0 20px rgb(127, 163, 255),
+        0 0 70px rgb(127, 163, 255);
+
+    position : absolute;
+    right : 20px;
+    bottom : 30px;
+}
+
+
+#todo{
+  float: left;
+  position : absolute;
+  top : 100px;
+}
+
+
+
+#timeLeft{
+  font-size: 50px;
+  color : white;
+  margin-bottom: 20px;
+  margin-top: 30px;
+
+  text-shadow: 
+  0 0 3px rgb(255, 138, 251),
+  0 0 12px rgb(255, 138, 251),
+  0 0 20px rgb(255, 138, 251);
+}
+
+li{
+  color : white;
+  z-index: 1;
+  font-size : 40px;
+  text-align: left;
+}
+
+button {
+  background-color: #ffffff00;
+  border-radius: 10px;
+  color : white;
+  border : 0.5px solid white;
+  height : 40px;
+  margin-right: 10px;
+  width : 50px;
+  font-weight: bold;
+  line-height: 0;
+  font-size: 25px;
+  cursor: pointer;
+}
+li:hover {
+  text-shadow: 
+  0 0 3px rgb(255, 138, 247),
+  0 0 12px rgb(255, 138, 251),
+  0 0 20px rgb(255, 138, 251),
+  0 0 50px rgb(255, 138, 251);
+  cursor: pointer;
+
+}
+button:hover {
+  box-shadow: 
+  0 0 3px rgb(255, 255, 247),
+  0 0 12px rgb(255, 255, 247);
+
+  text-shadow: 
+  0 0 3px rgb(255, 138, 247),
+  0 0 12px rgb(255, 138, 251),
+  0 0 20px rgb(255, 138, 251),
+  0 0 50px rgb(255, 138, 251);
+}
+
+
+
+
+
+#quote {
+  float : right;
+  color : white ;
+  font-size: 40px;
+  width : 600px;
+  text-shadow: 
+  0 0 5px rgb(255, 242, 0),
+  0 0 10px rgb(255, 242, 0);
+}
+
+
+
+
+
+#todo form input {
+
+  width : 400px;
+  height : 50px;
+  background-color: black;
+  color : white;
+  border-radius: 15px;
+  box-shadow:
+  0 0 7px #fff,
+  0 0 30px #fff,
+  0 0 40px #fff;
+  font-size: 40px;
+  font-weight: 700;
+  opacity: 0.7;
+}
+
+#highlight {
+  color : white;
+  font-size: 30px;
+  text-shadow: 
+  0 0 7px #fff,
+  0 0 15px #fff;
+}
+
+#search{
+  float : left;
+
+}
+
+#search form input:first-child {
+  float : right;
+  width : 400px;
+  height : 50px;
+  background-color: black;
+  color : white;
+  border-radius: 15px;
+  box-shadow:
+  0 0 7px #fff,
+  0 0 30px #fff,
+  0 0 40px #fff;
+  font-size: 40px;
+  font-weight: 700;
+  opacity: 0.7;
+}
+
+#search form input:last-child{
+  display : none;
+}

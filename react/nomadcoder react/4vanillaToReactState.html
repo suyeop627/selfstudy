@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <!-- react dom으로 추가할 위치를 지정하기 위한 div -->
+  <div id="root"></div>
+</body>
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+  const root = document.getElementById("root");
+  const App = () => {
+    const [counter, setCounter] = React.useState(0); //변수에 데이터를 담기
+    //버튼의 onClick 이벤트 발생시 실행할 함수
+    const onClick = () => {
+      /*      //state의 현재값으로 새로운 state를 계산하는 방식1(not good way)
+      setCounter(counter +1); //변수의 값 변경
+      //setCounter함수는 아래의 두 줄의 코드를 대신한다.
+      // counter = counter+1 
+      // ReactDOM.render(<App />, root);
+      */
+
+      //state의 현재값으로 새로운 state를 계산하는 방식2
+      //setCounter에는 함수를 넣을 수 있는데, 첫번째 argument는 현재값, return은 새로운 state이다.
+      setCounter(current => current + 1);
+    }
+
+    return (<div>
+      <h3>Total clicks: {counter} </h3> {/*변수를 컴포넌트에 연결*/}
+      <button onClick={onClick}>Click me</button>
+    </div>
+    )
+  };
+
+  ReactDOM.render(<App />, root);
+
+</script>
+
+</html>

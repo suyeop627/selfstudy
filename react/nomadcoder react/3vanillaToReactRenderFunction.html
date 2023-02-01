@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <!-- react dom으로 추가할 위치를 지정하기 위한 div -->
+    <div id="root"></div>
+  </body>
+  <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    const root = document.getElementById("root");
+    //카운터 생성
+    let counter = 0;
+
+    //카운터를 증가시키는 함수
+    function countUp() {
+      counter = counter + 1;
+      render();
+    }
+    //랜더링하는 함수
+    function render() {
+      ReactDOM.render(<App />, root);
+    }
+
+    const App = () => (
+      <div>
+        <h3>Total clicks: {counter} </h3> {/*jsx에서 변수값을 전달할 때, {}에 담아서 전달한다.*/}
+        <button onClick={countUp}>Click me</button>
+        {/*onClick prop에 countUp함수 전달*/}
+      </div>
+    );
+
+    ReactDOM.render(<App />, root); //render - React element를 HTML로 만들어서 root에 배치
+  </script>
+</html>

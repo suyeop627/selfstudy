@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <!-- react dom으로 추가할 위치를 지정하기 위한 div -->
+    <div id="root"></div>
+  </body>
+  <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    //function Btn(props) {
+    function Btn({ text, big }) {
+      //console.log(props);
+      return (
+        <button
+          //style을 지정하는 방식은 여러가지가 있지만, 요소 내에 작성시 object 형식으로 지정
+
+          style={{
+            backgroundColor: "tomato",
+            color: "white",
+            padding: "10px 20px",
+            border: 0,
+            borderRadius: 10,
+            fontSize: big ? 18 : 16, //전달받은 props중 big의 값에 따라 크기 커스터마이징
+          }}
+        >
+          {/*{props.text}*/}
+          {text}
+        </button>
+      );
+    }
+
+    const App = () => {
+      return (
+        <div>
+          {/*Btn은 함수이므로, text="Save Change"로 전달한 값은
+          Btn함수에서 인자로 받아 사용할 수 있다.
+          Btn({text:"Save Change"})로 값을 전달한 것과 같다.*/}
+          <Btn text="Save Change" big={true} />
+          {/*String, boolean, 함수 등을 전달할 수 있다.*/}
+          <Btn text="Continue" big={false} />
+        </div>
+      );
+    };
+    const root = document.getElementById("root");
+    ReactDOM.render(<App />, root);
+  </script>
+</html>

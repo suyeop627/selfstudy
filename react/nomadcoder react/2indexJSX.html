@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <!-- react dom으로 추가할 위치를 지정하기 위한 div -->
+  <div id="root"></div>
+</body>
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+  const root = document.getElementById("root");
+
+  //함수형태로 변환
+  function Title() {
+    return (
+      <h3 id="title" onMouseEnter={() => console.log("mouse enter!")}>
+        Hello I'm a title
+      </h3>
+    );
+  }
+
+
+  //함수형태로 변환
+  const Button = () => (
+    <button style={{
+      backgroundColor: "tomato",
+    }}
+      onClick={() => console.log("I'm clicked")}
+    >
+      Click me
+    </button>
+  );
+
+  // 컴포넌트를 다른 컴포넌트 안에 넣는 방식
+  const Container = () => (<div>
+    {/*일반적인 HTML태그인 것 처럼 포함시킨다. HTML태그명과 구분하기 위해, 첫글자는 반드시 대문자로 작성.*/}
+    <Title />
+    {/*<h3 id="title" onMouseEnter={() => console.log("mouse enter!")}>Hello I'm a title</h3>*/}
+    <Button />
+
+  </div>
+  )
+  ReactDOM.render(<Container />, root); //render - React element를 HTML로 만들어서 root에 배치
+
+</script>
+
+</html>
